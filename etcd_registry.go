@@ -229,6 +229,7 @@ func (e *etcdRegistry) keepRegister(key, val string, retryConfig *retry.Config) 
 				failedTimes++
 				continue
 			}
+			e.meta.cancel()
 			e.meta = &meta
 		}
 
