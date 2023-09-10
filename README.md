@@ -16,7 +16,7 @@ import (
 func main() {
     ...
     r, err := etcd.NewEtcdRegistry([]string{"127.0.0.1:2379"}) // r should not be reused.
-    if err != nil {
+    if err != nil 
         log.Fatal(err)
     }
     // https://www.cloudwego.io/docs/tutorials/framework-exten/registry/#integrate-into-kitex
