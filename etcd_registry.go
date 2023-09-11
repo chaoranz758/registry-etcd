@@ -231,9 +231,9 @@ func (e *etcdRegistry) keepRegister(key, val string, retryConfig *retry.Config) 
 			}
 			e.meta.cancel()
 			e.meta = &meta
+			delay = retryConfig.ObserveDelay
 		}
 
-		delay = retryConfig.ObserveDelay
 		failedTimes = 0
 	}
 	klog.Errorf("keep register service %s failed times:%d", key, failedTimes)
